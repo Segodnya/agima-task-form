@@ -1,53 +1,13 @@
 import React from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
-import * as Yup from "yup";
+import { validationSchema } from "./shared/validationSchema";
+import { IFormValues } from "./types/types";
 import InputField from "./components/InputField";
 import TextareaField from "./components/TextareaField";
 import FileInputField from "./components/FileInputField";
 
-const validationSchema = Yup.object().shape({
-  name: Yup.string().required("Required"),
-  company: Yup.string().required("Required"),
-  phoneNumber: Yup.string()
-    .matches(
-      /^\+7 \([0-9]{3}\) [0-9]{3}-[0-9]{2}-[0-9]{2}$/,
-      "Invalid phone number"
-    )
-    .required("Required"),
-  email: Yup.string().email("Invalid email").required("Required"),
-  ommentaryOrFileInput: Yup.mixed().test(
-    "commentary-or-file-input",
-    "Either commentary or file input should be filled",
-    function (value: any) {
-      const isEmpty = (obj: any) =>
-        [undefined, null, ""].some(
-          (val) =>
-            val === obj ||
-            (typeof obj === "object" && Object.keys(obj).length === 0)
-        );
-
-      if (isEmpty(value)) {
-        return true;
-      }
-
-      return isEmpty(value.commentary) || isEmpty(value.fileInput);
-    }
-  ),
-});
-
-interface FormValues {
-  name: string;
-  company: string;
-  phoneNumber: string;
-  email: string;
-  commentaryOrFileInput: {
-    commentary?: string;
-    fileInput?: File;
-  };
-}
-
 const App: React.FC = () => {
-  const initialValues: FormValues = {
+  const initialValues: IFormValues = {
     name: "",
     company: "",
     phoneNumber: "",
@@ -55,8 +15,7 @@ const App: React.FC = () => {
     commentaryOrFileInput: {},
   };
 
-  const handleSubmit = (values: FormValues) => {
-    // Handle form submission here
+  const handleSubmit = (values: IFormValues) => {
     console.log(values);
   };
 
@@ -78,8 +37,6 @@ const App: React.FC = () => {
             name="phoneNumber"
             type="tel"
             inputMode="tel"
-            pattern="\+7 \([0-9]{3}\) [0-9]{3}-[0-9]{2}-[0-9]{2}"
-            placeholder="+7 (___) ___-__-__"
           />
           <Field as={InputField} label="Email" name="email" />
           <Field
