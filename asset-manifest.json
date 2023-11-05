@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/agima-task-form/static/css/main.8604b5d4.css",
+    "main.js": "/agima-task-form/static/js/main.318ea7b9.js",
+    "static/css/764.fd43e84a.chunk.css": "/agima-task-form/static/css/764.fd43e84a.chunk.css",
+    "static/js/764.38ec1ee8.chunk.js": "/agima-task-form/static/js/764.38ec1ee8.chunk.js",
+    "static/media/back.svg": "/agima-task-form/static/media/back.798839e1196f605fba5eb97b10830698.svg",
+    "index.html": "/agima-task-form/index.html",
+    "static/media/background.svg": "/agima-task-form/static/media/background.9b19e7e3adbeaf3b98a6.svg",
+    "static/media/cross.svg": "/agima-task-form/static/media/cross.9137d94e75ffa9b44428.svg",
+    "main.8604b5d4.css.map": "/agima-task-form/static/css/main.8604b5d4.css.map",
+    "main.318ea7b9.js.map": "/agima-task-form/static/js/main.318ea7b9.js.map",
+    "764.fd43e84a.chunk.css.map": "/agima-task-form/static/css/764.fd43e84a.chunk.css.map",
+    "764.38ec1ee8.chunk.js.map": "/agima-task-form/static/js/764.38ec1ee8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8604b5d4.css",
+    "static/js/main.318ea7b9.js"
+  ]
+}
