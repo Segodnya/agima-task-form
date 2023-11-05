@@ -6,6 +6,31 @@
   height: calc(4 * 1.2em);
 }
 
+.button {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-white);
+  border: none;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  border-radius: 50%;
+  background-color: var(--color-disabled);
+  z-index: 3;
+}
+
+.button:hover {
+  cursor: pointer;
+  background-color: var(--color-accent);
+}
+
+.container:hover .button {
+  display: flex;
+}
+
 .label,
 .field {
   position: absolute;

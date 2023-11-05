@@ -1,0 +1,57 @@
+.container {
+  background-color: var(--color-white);
+  padding: 54px 94px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 52px;
+}
+
+.list {
+  list-style-type: decimal;
+}
+
+.element {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: normal;
+  margin-bottom: 24px;
+}
+
+.element:last-of-type {
+  margin-bottom: 42px;
+}
+
+.p {
+  font-size: 17px;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 24px;
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.imageContainer {
+  width: 48px;
+  height: 48px;
+}
+
+.image {
+  display: block;
+  width: 100%;
+}

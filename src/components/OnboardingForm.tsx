@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { SetStateAction, useState } from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import cn from "classnames";
 import { validationSchema } from "../shared/validationSchema";
@@ -8,7 +8,13 @@ import TextareaField from "./TextareaField";
 import FileInputField from "./FileInputField";
 import "./OnboardingForm.css";
 
-const OnboardingForm: React.FC = () => {
+interface IOnboardingFormProps {
+  setHintDisplayed: React.Dispatch<SetStateAction<boolean>>;
+}
+
+const OnboardingForm: React.FC<IOnboardingFormProps> = ({
+  setHintDisplayed,
+}) => {
   const initialValues: IFormValues = {
     name: "",
     company: "",
@@ -41,7 +47,7 @@ const OnboardingForm: React.FC = () => {
     >
       {({ isValid }) => (
         <Form className="form" onChange={handleFormChange}>
-          <h1 className="form__title">Сообщение в свободной форме</h1>
+          <h2 className="form__title">Сообщение в свободной форме</h2>
           <Field as={InputField} label="Ваше имя" name="name" />
           <Field as={InputField} label="Компания" name="company" />
           <Field
@@ -56,6 +62,7 @@ const OnboardingForm: React.FC = () => {
             as={TextareaField}
             label="Напишите текст обращения"
             name="commentaryOrFileInput.commentary"
+            setHintDisplayed={setHintDisplayed}
           />
           <Field
             as={FileInputField}
@@ -73,9 +80,9 @@ const OnboardingForm: React.FC = () => {
             />
             <p className="submit-container__text">
               согласен на обработку моих
-              <p className="submit-container__text_highlighted">
+              <span className="submit-container__text_highlighted">
                 персональных данных
-              </p>
+              </span>
             </p>
             <button
               className="button"

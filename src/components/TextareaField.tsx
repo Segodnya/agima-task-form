@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { SetStateAction, useState } from "react";
 import { useField } from "formik";
 import styles from "./TextareaField.module.css";
 import cn from "classnames";
@@ -7,6 +7,7 @@ interface TextareaFieldProps {
   label: string;
   name: string;
   onBlur?: (e: React.FocusEvent<HTMLTextAreaElement>) => void;
+  setHintDisplayed: React.Dispatch<SetStateAction<boolean>>;
 }
 
 const TextareaField: React.FC<TextareaFieldProps> = ({ label, ...props }) => {
@@ -24,6 +25,15 @@ const TextareaField: React.FC<TextareaFieldProps> = ({ label, ...props }) => {
   return (
     <>
       <div className={styles.container}>
+        <button
+          className={styles.button}
+          type="button"
+          onClick={() => {
+            props.setHintDisplayed(true);
+          }}
+        >
+          ?
+        </button>
         <label
           htmlFor={field.name}
           className={cn(styles.label, {
