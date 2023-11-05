@@ -1,38 +1,42 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap");
+
+:root {
+  --font-primary: "Roboto", sans-serif;
+  --color-background: #e3e3e3;
+  --color-accent: #05ac6a;
+  --color-disabled: #6f6f6f;
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-red: #f00;
+  --container-width: 1024px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*:not(svg *) {
+  all: unset;
+  display: revert;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+*:focus-visible {
+  outline: revert;
 }
 
-.App-header {
-  background-color: #282c34;
+body {
+  font-family: var(--font-primary);
+  background-color: var(--color-background);
+  font-size: 22px;
+  line-height: normal;
+  font-weight: 600;
+  color: var(--color-black);
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: var(--container-width);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  align-items: center;
+  gap: 42px;
 }

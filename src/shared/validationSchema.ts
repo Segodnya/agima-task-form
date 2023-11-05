@@ -1,18 +1,20 @@
 import * as Yup from "yup";
 
 export const validationSchema = Yup.object().shape({
-  name: Yup.string().required("Required"),
-  company: Yup.string().required("Required"),
+  name: Yup.string().required("Введите имя"),
+  company: Yup.string().required("Введите название компании"),
   phoneNumber: Yup.string()
+    .required("Введите номер телефона")
     .matches(
       /^\+7 \([0-9]{3}\) [0-9]{3}-[0-9]{2}-[0-9]{2}$/,
-      "Invalid phone number"
-    )
-    .required("Required"),
-  email: Yup.string().email("Invalid email").required("Required"),
+      "Укажите корректный номер телефона"
+    ),
+  email: Yup.string()
+    .email("Укажите корректный адрес электронной почты")
+    .required("Введите адрес электронной почты"),
   ommentaryOrFileInput: Yup.mixed().test(
     "commentary-or-file-input",
-    "Either commentary or file input should be filled",
+    "Добавьте комментарий или загрузите файл",
     function (value: any) {
       const isEmpty = (obj: any) =>
         [undefined, null, ""].some(
