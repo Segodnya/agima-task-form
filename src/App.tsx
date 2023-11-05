@@ -9,9 +9,9 @@ const App: React.FC = () => {
 
   return (
     <div className="container">
-      <h1>Анкета для новых клиентов AGIMA</h1>
+      <h1 className="h1">Анкета для новых клиентов AGIMA</h1>
       {hintDisplayed ? (
-        <React.Suspense fallback={<div>Loading...</div>}>
+        <React.Suspense fallback={<div>Загрузка...</div>}>
           <LazyHint setHintDisplayed={setHintDisplayed} />
         </React.Suspense>
       ) : (

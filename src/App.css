@@ -31,12 +31,20 @@ body {
 
 .container {
   margin: 0 auto;
-  padding: 0 20px;
-  max-width: var(--container-width);
+  padding: 20px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 42px;
+  background-image: url("./assets/background.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.h1 {
+  font-size: 42px;
+  font-weight: 600;
 }
